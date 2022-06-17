@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API list</title>
     <!-- link bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous'/>
     <!-- link vue  -->
@@ -16,7 +16,7 @@
 <body>
     
     <div class="container text-center" id="app">
-        <ul class="list-unstyled">
+        <ul v-if="listaEmail.length === 10" class="list-unstyled">
             <li v-for="email in listaEmail">{{email}}</li>
         </ul>
     </div>

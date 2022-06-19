@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API list with buttons</title>
+    <!-- link bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous'/>
+    <!-- link vue  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- link axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="container text-center" id="app">
+        <div class="my-4">
+            <!-- aggiungo il bottone per generare la lista -->
+            <button class="btn btn-success" @click="generateRandomEmail">Genera Lista</button>
+            <!-- aggiungo il bottone per cancellare la lista -->
+            <button class="btn btn-danger" @click="deleteList">Cancella Lista</button>
+        </div>
+        <!-- scrivo la condizione affinchè la lista non venga mostrata finché non ha 10 elementi -->
+        <ul v-if="listaEmail.length === 10" class="list-unstyled">
+            <!-- creo il ciclo per generare la lista -->
+            <li v-for="email in listaEmail">{{email}}</li>
+        </ul>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
